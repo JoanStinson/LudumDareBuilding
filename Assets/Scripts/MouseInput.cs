@@ -24,5 +24,34 @@ public class MouseInput : MonoBehaviour {
                 cube.transform.position = objectPos;
             }
         }
+        /*if (Input.GetMouseButtonUp(0))
+        {
+            posFinal = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+
+            currentSwipe = new Vector2(posFinal.x - posInit.x, posFinal.y - posInit.y);
+
+            currentSwipe.Normalize();
+
+            //swipe upwards
+            if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
+            {
+                directionSwipe = "up";
+            }
+            //swipe down
+            if (currentSwipe.y < 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
+            {
+                directionSwipe = "down";
+            }
+            //swipe left
+            if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
+            {
+                directionSwipe = "left";
+            }
+            //swipe right
+            if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
+            {
+                directionSwipe = "right";
+            }
+        }*/
     }
 }
