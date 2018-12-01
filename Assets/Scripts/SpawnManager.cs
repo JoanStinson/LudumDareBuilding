@@ -53,12 +53,12 @@ public class SpawnManager : MonoBehaviour {
 	
 	private void Update () {
 
-        print("Numero Edificios Acabados: "+numFinishedBuildings);
+        //print("Numero Edificios Acabados: "+numFinishedBuildings);
 
         // Set building to finished when reaches max height
         if (numFinishedBuildings < numberOfBuildings) {
             for (int i = 0; i < building.Count; i++) {
-                print("Building " + i + ": " + building[i].buildingFinished);
+                //print("Building " + i + ": " + building[i].buildingFinished);
                 if (building[i].pieceHeight == 6f && !building[i].buildingFinished) {
                     building[i].buildingFinished = true;
                     numFinishedBuildings++;
@@ -78,6 +78,7 @@ public class SpawnManager : MonoBehaviour {
                 buildingSpawnPoints[piece.spawnPos].transform.position.y + piece.pieceHeight, 
                 buildingSpawnPoints[piece.spawnPos].transform.position.z), Quaternion.identity);
             piece.pieceHeight++;
+            GameManager.instance.DecreaseSunLight();
         }
     }
 }
