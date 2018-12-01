@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Each building is formed by pieces
-public struct Piece { 
+public class Piece { 
     // Variables
     public float velocity;
     public float pieceTime; 
@@ -11,17 +11,12 @@ public struct Piece {
     public float pieceHeight;
     public int spawnPos;
 
-    // Constructor 
     public Piece(float velocity, float pieceTime, bool buildingFinished, float pieceHeight, int spawnPos) {
         this.velocity = velocity;
         this.pieceTime = pieceTime;
         this.buildingFinished = buildingFinished;
         this.pieceHeight = pieceHeight;
         this.spawnPos = spawnPos;
-    }
-
-    public void SetBuildingFinished(bool buildingFinished) {
-        this.buildingFinished = buildingFinished;
     }
 }
 
@@ -37,6 +32,8 @@ public class SpawnManager : MonoBehaviour {
     public int numberOfBuildings;
     public float minMoveVelocity, maxMoveVelocity; //0-5
     public float minBuildVelocity, maxBuildVelocity; //0.5-3
+
+    private int numFinishedBuildings = 0;
 
     private void Start () {
 
@@ -55,11 +52,22 @@ public class SpawnManager : MonoBehaviour {
     }
 	
 	private void Update () {
-        //for (int i = 0; i < building.Count; i++) {
-        //    if (building[i].pieceHeight == 5f)
-        //        building[i].SetBuildingFinished(true);
-        //    print(building[i].buildingFinished);
-        //}
+
+        print("Numero Edificios Acabados: "+numFinishedBuildings);
+
+        // Set building to finished when reaches max height
+        if (numFinishedBuildings < numberOfBuildings) {
+            for (int i = 0; i < building.Count; i++) {
+                print("Building " + i + ": " + building[i].buildingFinished);
+                if (building[i].pieceHeight == 6f && !building[i].buildingFinished) {
+                    building[i].buildingFinished = true;
+                    numFinishedBuildings++;
+                }
+            }
+        }
+        // Si tots els edificis tenen el máxim de pieces Game Over
+        else GameManager.instance.GameOver();  
+
     }
 
     private IEnumerator AddPiece(Piece piece) {

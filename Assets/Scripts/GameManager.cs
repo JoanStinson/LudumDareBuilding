@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public static GameManager instance;
+
+	private void Start () {
+        if (!instance) instance = this;
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	private void Update () {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Pause();
+    }
+
+    public void Pause() {
+        //Time.timeScale = isPlayerMenu ? 0 : 1;
+        Time.timeScale = 0;
+        print("Pause");
+    }
+
+    public void GameOver() {
+        Time.timeScale = 0;
+        print("Game Over");
+    }
 }
