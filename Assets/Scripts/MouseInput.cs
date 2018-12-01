@@ -3,55 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseInput : MonoBehaviour {
+    public GameObject blade;
+    public float distanceBlade;
+    public float distanceParticles;
+    public GameObject particles;
+    private Vector3 bladePos;
+    private Vector3 posInitBlade;
+    private Vector3 particlesPos;
+    private Vector3 posInitParticles;
 
-    public GameObject cube;
-	// Use this for initialization
-	void Start () {
-		
-	}
+    // Use this for initialization
+    void Start () {
+    }
 
     void  Update()
     {
         if (Input.GetMouseButton(0))
         {
-            var mousePos = Input.mousePosition;
-            mousePos.z = 5;       // we want 2m away from the camera position
-            var objectPos = Camera.main.ScreenToWorldPoint(mousePos);
-            if(cube == null)
-                Instantiate(cube, objectPos, Quaternion.identity);
+            posInitBlade = Input.mousePosition;
+            posInitBlade.z = distanceBlade;
+            bladePos = Camera.main.ScreenToWorldPoint(posInitBlade);
+
+            posInitParticles = Input.mousePosition;
+            posInitParticles.z = distanceParticles;
+            particlesPos = Camera.main.ScreenToWorldPoint(posInitParticles);
+
+
+            if (!blade.gameObject.activeSelf) {
+                blade.SetActive(true);
+                
+            }
             else
             {
-                cube.transform.position = objectPos;
+                blade.transform.position = bladePos;
+                
+            }
+
+            if (!particles.gameObject.activeSelf)
+            {
+                particles.SetActive(true);
+            }
+
+            else{
+                particles.transform.position = particlesPos;
             }
         }
-        /*if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
-            posFinal = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 
-            currentSwipe = new Vector2(posFinal.x - posInit.x, posFinal.y - posInit.y);
-
-            currentSwipe.Normalize();
-
-            //swipe upwards
-            if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
-            {
-                directionSwipe = "up";
-            }
-            //swipe down
-            if (currentSwipe.y < 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
-            {
-                directionSwipe = "down";
-            }
-            //swipe left
-            if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
-            {
-                directionSwipe = "left";
-            }
-            //swipe right
-            if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
-            {
-                directionSwipe = "right";
-            }
-        }*/
+            blade.SetActive(false);
+            particles.SetActive(false);
+        }
     }
 }
