@@ -8,6 +8,8 @@ TagManager:
   - Contact1
   - Contact2
   - Contact3
+  - Fire
+  - Building1
   layers:
   - Default
   - TransparentFX
