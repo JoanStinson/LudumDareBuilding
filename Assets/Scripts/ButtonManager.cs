@@ -42,4 +42,13 @@ public class ButtonManager : MonoBehaviour {
     {
         panelCredits.SetActive(true);
     }
+    public void ButtonBack()
+    {
+        if (panelTutorial.activeInHierarchy)
+            panelTutorial.SetActive(false);
+        else if (panelOptions.activeInHierarchy)
+            panelOptions.SetActive(false);
+        else if (panelCredits.activeInHierarchy)
+            panelCredits.SetActive(false);
+    }
 }
