@@ -39,7 +39,7 @@ public class MouseInput : MonoBehaviour {
                 
             }
 
-            if (!particles.gameObject.activeSelf)
+            if (!particles.gameObject.activeSelf && !GameManager.instance.isPause)
             {
                 particles.SetActive(true);
             }

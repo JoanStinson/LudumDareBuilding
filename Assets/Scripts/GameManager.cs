@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour {
     public GameObject globalLight;
     public GameObject gameoverPanel, pausePanel;
     public Text currentTime;
-    private bool isPause = false;
+    public bool isPause = false;
     private float timer = 0;
-    private bool isGameOver = false;
+    public bool isGameOver = false;
 
 	private void Start () {
         if (!instance) instance = this;
@@ -45,9 +45,9 @@ public class GameManager : MonoBehaviour {
     }
 
     public void GameOver() {
-        isGameOver = true;
-        Time.timeScale = 0;
-        gameoverPanel.SetActive(true);
+        //isGameOver = true;
+        //Time.timeScale = 0;
+        //gameoverPanel.SetActive(true);
     }
 
     public void UsePowerup1() {

@@ -1266,7 +1266,7 @@ Prefab:
     - target: {fileID: 23868535526091004, guid: af65a131a1c8d4c4984199326e5e791b,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114047335739683040, guid: af65a131a1c8d4c4984199326e5e791b,
         type: 2}
@@ -2415,6 +2415,8 @@ MonoBehaviour:
   gameoverPanel: {fileID: 1620360480}
   pausePanel: {fileID: 579815437}
   currentTime: {fileID: 603914659}
+  isPause: 0
+  isGameOver: 0
 --- !u!4 &2051013437
 Transform:
   m_ObjectHideFlags: 0

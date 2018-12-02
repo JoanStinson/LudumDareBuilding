@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Building
+  - Contact1
+  - Contact2
+  - Contact3
   layers:
   - Default
   - TransparentFX
