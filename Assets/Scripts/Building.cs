@@ -5,12 +5,11 @@ using UnityEngine;
 public class Building : MonoBehaviour {
     public bool contact1, contact2, contact3, firstCut;
     public float knocbackForce = 10000f;
-    // Use this for initialization
+
     void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
@@ -19,7 +18,26 @@ public class Building : MonoBehaviour {
     {
         if (contact1 && contact2 && contact3 & !firstCut)
         {
-            gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * knocbackForce);
+            transform.Rotate(90f, 0f, 0f);
+            //gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * knocbackForce);
+            //gameObject.GetComponent<Rigidbody>().useGravity = true;
+            StartCoroutine(DestroyObject());
+            Debug.Log("ApplyForce");
+
+            //TODO contar fills quan destroy
         }
     }
+
+    /*private void OnTriggerEnter(Collider collision) {
+        if (collision.transform.CompareTag("Top")) {
+            NewSpawn.instance.speedY = 0;
+            print("caca");
+        }
+    }*/
+
+    private IEnumerator DestroyObject() {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+    }
+
 }
