@@ -47,13 +47,13 @@ public class Contact : MonoBehaviour {
             if ((previousVelocityX < 0 && velocityX > 0)) /*&& previousVelocityX != 0 && velocityX != 0*/
             {
                 changeSpeed = true;
-                print(changeSpeed);
+                //print(changeSpeed);
             }
 
             else if ((previousVelocityX > 0 && velocityX < 0))
             {
                 changeSpeed = true;
-                print(changeSpeed);
+                //print(changeSpeed);
             }
         }
         
@@ -71,6 +71,7 @@ public class Contact : MonoBehaviour {
             settings.startColor = new Color(255, 0, 0, 255);
 
             particles.transform.GetChild(0).GetComponent<TrailRenderer>().startColor = new Color(255, 0, 0, 255);
+            Debug.Log("1st Collider");
         }
 
         // contact2
@@ -81,6 +82,7 @@ public class Contact : MonoBehaviour {
             settings.startColor = new Color(255, 0, 0, 255);
 
             particles.transform.GetChild(0).GetComponent<TrailRenderer>().startColor = new Color(255, 0, 0, 255);
+            Debug.Log("2nd Collider");
         }
 
         // contact3
@@ -91,6 +93,7 @@ public class Contact : MonoBehaviour {
             settings.startColor = new Color(255, 0, 0, 255);
 
             particles.transform.GetChild(0).GetComponent<TrailRenderer>().startColor = new Color(255, 0, 0, 255);
+            Debug.Log("3rd ollider");
         }
 
         //if (changeSpeed)

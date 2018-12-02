@@ -23,7 +23,7 @@ public class MouseInput : MonoBehaviour {
 
     void  Update()
     {
-
+        
         if (Input.GetMouseButtonDown(0))
         {
             GraphicRaycaster gr = this.GetComponent<GraphicRaycaster>();
@@ -69,4 +69,5 @@ public class MouseInput : MonoBehaviour {
             particles.SetActive(false);
         }
     }
+    
 }

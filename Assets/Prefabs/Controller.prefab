@@ -52,6 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blade: {fileID: 0}
-  distanceBlade: 5
+  distanceBlade: 6.25
   distanceParticles: 0.8
   particles: {fileID: 0}

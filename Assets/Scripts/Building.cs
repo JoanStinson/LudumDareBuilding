@@ -28,12 +28,12 @@ public class Building : MonoBehaviour {
         }
     }
 
-    /*private void OnTriggerEnter(Collider collision) {
+    private void OnTriggerEnter(Collider collision) {
         if (collision.transform.CompareTag("Top")) {
             NewSpawn.instance.speedY = 0;
             print("caca");
         }
-    }*/
+    }       
 
     private IEnumerator DestroyObject() {
         yield return new WaitForSeconds(1f);
