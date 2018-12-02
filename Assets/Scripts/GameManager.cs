@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour {
 
 	private void Start () {
         if (!instance) instance = this;
+        isPause = false;
+        isGameOver = false;
     }
 	
 	private void Update () {
@@ -41,24 +44,27 @@ public class GameManager : MonoBehaviour {
     }
 
     public void Pause() {
-        isPause = !isPause;
+        if(!isGameOver)
+            isPause = !isPause;
     }
 
     public void GameOver() {
-        //isGameOver = true;
-        //Time.timeScale = 0;
-        //gameoverPanel.SetActive(true);
+        isGameOver = true;
+        Time.timeScale = 0;
+        gameoverPanel.SetActive(true);
     }
 
-    public void UsePowerup1() {
-
+    public void ButtonResume()
+    {
+        isPause = false;
     }
-
-    public void UsePowerup2() {
-
+    public void ButtonRetry()
+    {
+        isPause = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    public void UsePowerup3() {
-
+    public void ButtonMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
