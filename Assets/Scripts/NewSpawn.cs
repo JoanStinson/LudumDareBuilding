@@ -22,7 +22,7 @@ public class NewSpawn : MonoBehaviour {
 
 	void Start () {
         if (instance == null) instance = this;
-        speedY = Random.Range(0.05f, 0.1f);
+        speedY = Random.Range(0.05f, 0.06f);
 	}
 	
 	void Update () {
