@@ -103,7 +103,7 @@ public class Contact : MonoBehaviour {
             other.transform.GetComponentInParent<Building>().contact3 && !other.transform.GetComponentInParent<Building>().firstCut) {
             //AddForce();
             print("CORTEEEEEEEE");
-            other.transform.GetComponent<Building>().ApplyForce();
+            other.transform.GetComponentInParent<Building>().ApplyForce();
             other.transform.GetComponentInParent<Building>().firstCut = true;
             powerUpScript.GeneratePowerUp1();
         }
@@ -113,11 +113,11 @@ public class Contact : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-       /* if (other.CompareTag("Building"))
+       if (other.CompareTag("Building"))
         {
             ParticleSystem.MainModule settings = particles.GetComponent<ParticleSystem>().main;
             settings.startColor = new Color(255, 255, 255, 255);
             particles.transform.GetChild(0).GetComponent<TrailRenderer>().startColor = new Color(255, 255, 255, 255);
-        }*/
+        }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
 
 public class MouseInput : MonoBehaviour {
     public GameObject blade;
@@ -11,6 +14,8 @@ public class MouseInput : MonoBehaviour {
     private Vector3 posInitBlade;
     private Vector3 particlesPos;
     private Vector3 posInitParticles;
+    private Vector3 posMouse;
+    List<RaycastResult> results;
 
     // Use this for initialization
     void Start () {
@@ -18,6 +23,16 @@ public class MouseInput : MonoBehaviour {
 
     void  Update()
     {
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            GraphicRaycaster gr = this.GetComponent<GraphicRaycaster>();
+            PointerEventData pointerData = new PointerEventData(EventSystem.current);
+            pointerData.position = Input.mousePosition; // use the position from controller as start of raycast instead of mousePosition.
+
+            results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(pointerData, results);
+        }
         if (Input.GetMouseButton(0))
         {
             posInitBlade = Input.mousePosition;
@@ -27,9 +42,8 @@ public class MouseInput : MonoBehaviour {
             posInitParticles = Input.mousePosition;
             posInitParticles.z = distanceParticles;
             particlesPos = Camera.main.ScreenToWorldPoint(posInitParticles);
-            
 
-            if (!blade.gameObject.activeSelf) {
+            if (!blade.gameObject.activeSelf && !GameManager.instance.isPause && !GameManager.instance.isGameOver && results.Count == 0) {
                 blade.SetActive(true);
                 
             }
@@ -39,7 +53,7 @@ public class MouseInput : MonoBehaviour {
                 
             }
 
-            if (!particles.gameObject.activeSelf && !GameManager.instance.isPause)
+            if (!particles.gameObject.activeSelf && !GameManager.instance.isPause && !GameManager.instance.isGameOver && results.Count == 0)
             {
                 particles.SetActive(true);
             }

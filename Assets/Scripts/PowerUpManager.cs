@@ -7,6 +7,7 @@ public class PowerUpManager : MonoBehaviour {
     public GameObject powerUp1Button, powerUp2Button, powerUp3Button;
     
     public int bombas;
+    float provabilityBomb;
     // Use this for initialization
     void Start () {
         
@@ -25,12 +26,18 @@ public class PowerUpManager : MonoBehaviour {
 	}
     public void GeneratePowerUp1()
     {
-        //int rand = Random.
-        bombas += 1;
+        provabilityBomb = Random.Range(0, 100);
+        Debug.Log(provabilityBomb);
+        if (provabilityBomb >= 60)
+        {
+            bombas += 1;
+        }
+        
     }
     public void UsePowerup1()
     {
-
+        bombas -= 1;
+        Debug.Log("bombas "+ bombas);
     }
 
     public void UsePowerup2()
