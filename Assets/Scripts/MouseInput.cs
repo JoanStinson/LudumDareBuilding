@@ -27,7 +27,7 @@ public class MouseInput : MonoBehaviour {
             posInitParticles = Input.mousePosition;
             posInitParticles.z = distanceParticles;
             particlesPos = Camera.main.ScreenToWorldPoint(posInitParticles);
-
+            
 
             if (!blade.gameObject.activeSelf) {
                 blade.SetActive(true);
