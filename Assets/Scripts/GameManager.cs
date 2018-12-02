@@ -13,11 +13,11 @@ public class GameManager : MonoBehaviour {
     public bool isPause = false;
     private float timer = 0;
     public bool isGameOver = false;
+    public Text scoreText;
+    public static int score;
 
 	private void Start () {
-        if (!instance) instance = this;
-        isPause = false;
-        isGameOver = false;
+        NewGame();
     }
 	
 	private void Update () {
@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape)) Pause();
         if (!isGameOver) Time.timeScale = isPause ? 0 : 1;
         pausePanel.SetActive(isPause);
+        scoreText.text = score.ToString();
     }
 
     private void Timer() {
@@ -66,5 +67,14 @@ public class GameManager : MonoBehaviour {
     public void ButtonMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void NewGame()
+    {
+        if (!instance) instance = this;
+        isPause = false;
+        isGameOver = false;
+        score = 0;
+        scoreText.text = "0";
     }
 }

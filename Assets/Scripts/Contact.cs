@@ -102,10 +102,11 @@ public class Contact : MonoBehaviour {
         if (other.transform.GetComponentInParent<Building>().contact1 && other.transform.GetComponentInParent<Building>().contact2 && 
             other.transform.GetComponentInParent<Building>().contact3 && !other.transform.GetComponentInParent<Building>().firstCut) {
             //AddForce();
-            print("CORTEEEEEEEE");
+            //print("CORTEEEEEEEE");
             other.transform.GetComponentInParent<Building>().ApplyForce();
             other.transform.GetComponentInParent<Building>().firstCut = true;
             powerUpScript.GeneratePowerUp1();
+            GameManager.score += 100;
         }
 
     }

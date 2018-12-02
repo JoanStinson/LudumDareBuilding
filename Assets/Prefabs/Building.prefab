@@ -253,3 +253,5 @@ MonoBehaviour:
   contact1: 0
   contact2: 0
   contact3: 0
+  firstCut: 0
+  knocbackForce: 10000

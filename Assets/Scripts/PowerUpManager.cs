@@ -27,7 +27,7 @@ public class PowerUpManager : MonoBehaviour {
     public void GeneratePowerUp1()
     {
         provabilityBomb = Random.Range(0, 100);
-        Debug.Log(provabilityBomb);
+        //Debug.Log(provabilityBomb);
         if (provabilityBomb >= 60)
         {
             bombas += 1;
