@@ -12,6 +12,8 @@ public class Contact : MonoBehaviour {
     private float previousVelocityX;
     private Vector3 velocity;
     private bool changeSpeed;
+    public GameObject gameManager;
+    private PowerUpManager powerUpScript;
 
     private void Awake()
     {
@@ -23,6 +25,7 @@ public class Contact : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        powerUpScript = gameManager.GetComponent<PowerUpManager>();
         previousVelocityX = 9;
 
     }
@@ -42,6 +45,12 @@ public class Contact : MonoBehaviour {
             //print("prevVel: " + previousVelocityX + "vel: " + velocityX);
             
             if ((previousVelocityX < 0 && velocityX > 0)) /*&& previousVelocityX != 0 && velocityX != 0*/
+            {
+                changeSpeed = true;
+                print(changeSpeed);
+            }
+
+            else if ((previousVelocityX > 0 && velocityX < 0))
             {
                 changeSpeed = true;
                 print(changeSpeed);
@@ -94,7 +103,9 @@ public class Contact : MonoBehaviour {
             other.transform.GetComponentInParent<Building>().contact3 && !other.transform.GetComponentInParent<Building>().firstCut) {
             //AddForce();
             print("CORTEEEEEEEE");
+            other.transform.GetComponent<Building>().ApplyForce();
             other.transform.GetComponentInParent<Building>().firstCut = true;
+            powerUpScript.GeneratePowerUp1();
         }
 
     }

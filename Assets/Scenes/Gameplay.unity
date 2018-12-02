@@ -670,7 +670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &544532615
 RectTransform:
   m_ObjectHideFlags: 0
@@ -743,7 +743,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2051013436}
+      - m_Target: {fileID: 2051013438}
         m_MethodName: UsePowerup3
         m_Mode: 1
         m_Arguments:
@@ -1278,6 +1278,11 @@ Prefab:
       propertyPath: trail
       value: 
       objectReference: {fileID: 966938683}
+    - target: {fileID: 114047335739683040, guid: af65a131a1c8d4c4984199326e5e791b,
+        type: 2}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2051013435}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af65a131a1c8d4c4984199326e5e791b, type: 2}
   m_IsPrefabAsset: 0
@@ -1644,7 +1649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1352525060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1703,7 +1708,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2051013436}
+      - m_Target: {fileID: 2051013438}
         m_MethodName: UsePowerup1
         m_Mode: 1
         m_Arguments:
@@ -2080,7 +2085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1672030835
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2153,7 +2158,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2051013436}
+      - m_Target: {fileID: 2051013438}
         m_MethodName: UsePowerup2
         m_Mode: 1
         m_Arguments:
@@ -2393,6 +2398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2051013437}
   - component: {fileID: 2051013436}
+  - component: {fileID: 2051013438}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2430,6 +2436,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2051013438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2051013435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe5d37cd9ca37e49a40bfaf6a37f254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp1Button: {fileID: 1352525059}
+  powerUp2Button: {fileID: 1672030834}
+  powerUp3Button: {fileID: 544532614}
+  bombas: 0
 --- !u!1 &2081761884
 GameObject:
   m_ObjectHideFlags: 0
