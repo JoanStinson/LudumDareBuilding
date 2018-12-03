@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
     public Text currentTime;
     public bool isPause = false;
     private float timer = 0;
-    public bool isGameOver = false;
+    public static bool isGameOver = false;
     public Text scoreText;
 
     public static int score;

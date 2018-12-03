@@ -20,13 +20,16 @@ public class Floor : MonoBehaviour {
         {
             Debug.Log("Floor Hit");
 
-            GameManager.score += 10;
-            GameManager.floorsSliced++;
-
-            GameManager.floorsSliced += 1;
-            GameManager.score += 100;
+            GameManagerNew.score += 10;
+            GameManagerNew.floorsSliced++;
 
             Destroy(gameObject);
+        }
+
+        if (other.tag == "Top")
+        {
+            Debug.Log("You died");
+            GameManagerNew.instance.GameOver();
         }
     }
 }

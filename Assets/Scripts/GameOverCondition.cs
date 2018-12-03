@@ -16,6 +16,9 @@ public class GameOverCondition : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //GameManager.instance.GameOver();
+        //if (other.CompareTag("instance"))
+        //{
+        //    GameManagerNew.instance.GameOver();
+        //}
     }
 }

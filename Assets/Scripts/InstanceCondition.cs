@@ -21,6 +21,6 @@ public class InstanceCondition : MonoBehaviour {
         {
             spawnManager.GenerateBuild(other.GetComponent<BuildConf>().idSpawner);
         }
-        //GameManager.instance.GameOver();
+
     }
 }
