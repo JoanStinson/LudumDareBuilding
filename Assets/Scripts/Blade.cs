@@ -54,6 +54,7 @@ public class Blade : MonoBehaviour
         if(velocity > minCuttingVelocity)
         {
             circleCollider.enabled = true;
+
         }
         else
         {

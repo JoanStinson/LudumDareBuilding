@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Floor : MonoBehaviour {
-
+    private GameObject gmManager;
+    private PowerUpManager pwrUpManager;
     public GameObject cut;
+    public AudioClip cutBuild;
 	// Use this for initialization
 	void Start () {
+        gmManager = GameObject.Find("GameManager");
+        pwrUpManager = gmManager.GetComponent<PowerUpManager>();
         cut = GameObject.Find("CutFloor");
 	}
 	
@@ -23,7 +27,9 @@ public class Floor : MonoBehaviour {
 
             GameManagerNew.score += 10;
             GameManagerNew.floorsSliced++;
+            pwrUpManager.GeneratePowerUp1();
             cut.GetComponent<AudioSource>().Play();
+            
             Destroy(gameObject);
         }
 

@@ -6,7 +6,7 @@ public class CameraShake : MonoBehaviour {
 
     private Vector3 originPosition;
     private Quaternion originRotation;
-    public float shake_decay;
+    private float shake_decay;
     public float shake_intensity;
 
     void OnGUI() {
