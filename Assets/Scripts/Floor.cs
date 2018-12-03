@@ -19,7 +19,8 @@ public class Floor : MonoBehaviour {
         if(other.tag == "Blade")
         {
             Debug.Log("Floor Hit");
-            GameManager.score += 100;
+            GameManager.score += 10;
+            GameManager.floorsSliced++;
             Destroy(gameObject);
         }
     }

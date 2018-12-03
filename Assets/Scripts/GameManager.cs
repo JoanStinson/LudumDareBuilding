@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour {
     public bool isGameOver = false;
     public Text scoreText;
     public static int score;
+    public static int floorsSliced;
+
+    public Text goTime, goScore, goFloors;
 
 	private void Start () {
         NewGame();
@@ -28,7 +31,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape)) Pause();
         if (!isGameOver) Time.timeScale = isPause ? 0 : 1;
         pausePanel.SetActive(isPause);
-        scoreText.text = score.ToString();
+        scoreText.text = "Score: "+score.ToString();
     }
 
     private void Timer() {
@@ -53,6 +56,10 @@ public class GameManager : MonoBehaviour {
         isGameOver = true;
         Time.timeScale = 0;
         gameoverPanel.SetActive(true);
+        // Set texts
+        goTime.text = currentTime.text;
+        goScore.text = score.ToString();
+        goFloors.text = floorsSliced.ToString();
     }
 
     public void ButtonResume()
@@ -76,5 +83,6 @@ public class GameManager : MonoBehaviour {
         isGameOver = false;
         score = 0;
         scoreText.text = "0";
+        floorsSliced = 0;
     }
 }
