@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: b7bf1f0b63ced064081205c8ee81a551
+  - enabled: 1
+    path: Assets/Scenes/Ortographic.unity
+    guid: b1523b2e82f4f634d8ac3a78a8901f6d
+  - enabled: 1
+    path: Assets/Scenes/OtographicSpawns.unity
+    guid: f25d7d91d3d6a7848a570c36e0f24c15
   m_configObjects: {}
