@@ -11,7 +11,7 @@ public class GameManagerNew : MonoBehaviour {
     public GameObject gameoverPanel, pausePanel;
     public Text currentTime;
     public bool isPause = false;
-    private float timer = 0;
+    public float timer = 0;
     public bool isGameOver = false;
     public Text scoreText;
     public static int score;

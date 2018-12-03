@@ -15,12 +15,13 @@ public class PowerUpManager : MonoBehaviour
     public AudioSource bombActivate, bombSound;
     public GameObject particles;
     public GameObject cam;
-
+  
 
     // Use this for initialization
     void Start()
     {
         spawnM = pointSpawns.GetComponent<USpawnManager>();
+       
         
     }
 

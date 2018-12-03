@@ -2635,6 +2635,11 @@ MonoBehaviour:
   - {fileID: 2085028530}
   - {fileID: 484393542}
   - {fileID: 1999132339}
+  minVelocity0: 1
+  maxVelocity0: 3
+  minVelocity1: 0
+  maxVelocity1: 0
+  gmManagerNew: {fileID: 2051013435}
 --- !u!1001 &584948834
 Prefab:
   m_ObjectHideFlags: 0
@@ -3091,7 +3096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.009653568, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6706,7 +6711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.50636625, g: 0, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7955,7 +7960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.3217411, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8759,6 +8764,7 @@ MonoBehaviour:
   pausePanel: {fileID: 493730802}
   currentTime: {fileID: 603914659}
   isPause: 0
+  timer: 0
   isGameOver: 0
   scoreText: {fileID: 1947718911}
   goTime: {fileID: 1656967557}
