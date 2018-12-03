@@ -47,16 +47,16 @@ public class ButtonManager : MonoBehaviour {
     public void ButtonBack()
     {
         if (panelTutorial.activeInHierarchy)
-            Invoke("BackTutorial", lengthClickButton);
+            BackTutorial();
         else if (panelOptions.activeInHierarchy)
-            Invoke("BackOption", lengthClickButton);
+            BackOption();
         else if (panelCredits.activeInHierarchy)
-            Invoke("BackCredits", lengthClickButton);
+            BackCredits();
     }
 
     void Play()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene("Ortographic");
     }
 
     void BackTutorial()
