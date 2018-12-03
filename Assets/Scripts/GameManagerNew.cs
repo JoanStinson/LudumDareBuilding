@@ -18,6 +18,7 @@ public class GameManagerNew : MonoBehaviour {
     public static int floorsSliced;
 
     public Text goTime, goScore, goFloors;
+    public AudioSource music, gameOverMusic;
 
 	private void Start () {
         NewGame();
@@ -53,6 +54,9 @@ public class GameManagerNew : MonoBehaviour {
     }
 
     public void GameOver() {
+        music.Stop();
+        gameOverMusic.Play();
+
         isGameOver = true;
         Time.timeScale = 0;
         gameoverPanel.SetActive(true);
@@ -79,6 +83,7 @@ public class GameManagerNew : MonoBehaviour {
     private void NewGame()
     {
         if (!instance) instance = this;
+        music.Play();
         isPause = false;
         isGameOver = false;
         score = 0;

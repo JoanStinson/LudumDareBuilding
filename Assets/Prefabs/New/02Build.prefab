@@ -1953,6 +1953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27a91931a6b87140b14916ef4c7d771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cut: {fileID: 0}
 --- !u!114 &114516341168634580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1976,6 +1977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27a91931a6b87140b14916ef4c7d771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cut: {fileID: 0}
 --- !u!114 &114691333162828780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1987,3 +1989,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27a91931a6b87140b14916ef4c7d771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cut: {fileID: 0}

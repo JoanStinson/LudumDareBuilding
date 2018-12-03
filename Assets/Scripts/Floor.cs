@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Floor : MonoBehaviour {
 
+    public GameObject cut;
 	// Use this for initialization
 	void Start () {
-		
+        cut = GameObject.Find("CutFloor");
 	}
 	
 	// Update is called once per frame
@@ -22,7 +23,7 @@ public class Floor : MonoBehaviour {
 
             GameManagerNew.score += 10;
             GameManagerNew.floorsSliced++;
-
+            cut.GetComponent<AudioSource>().Play();
             Destroy(gameObject);
         }
 
