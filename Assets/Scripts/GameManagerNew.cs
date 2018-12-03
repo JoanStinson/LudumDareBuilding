@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class GameManagerNew : MonoBehaviour {
 
-    public static GameManager instance;
+    public static GameManagerNew instance;
     public GameObject globalLight;
     public GameObject gameoverPanel, pausePanel;
     public Text currentTime;
@@ -14,14 +14,10 @@ public class GameManager : MonoBehaviour {
     private float timer = 0;
     public bool isGameOver = false;
     public Text scoreText;
-
     public static int score;
     public static int floorsSliced;
 
     public Text goTime, goScore, goFloors;
-
-    //public static int score, floorsSliced;
-
 
 	private void Start () {
         NewGame();
@@ -85,7 +81,6 @@ public class GameManager : MonoBehaviour {
         if (!instance) instance = this;
         isPause = false;
         isGameOver = false;
-        floorsSliced = 0;
         score = 0;
         scoreText.text = "0";
         floorsSliced = 0;

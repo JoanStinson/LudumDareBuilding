@@ -15,6 +15,7 @@ TagManager:
   - Slice1
   - Slice2
   - Slice3
+  - instance
   layers:
   - Default
   - TransparentFX
