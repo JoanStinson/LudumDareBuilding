@@ -12,6 +12,9 @@ TagManager:
   - Building1
   - Top
   - Blade
+  - Slice1
+  - Slice2
+  - Slice3
   layers:
   - Default
   - TransparentFX
