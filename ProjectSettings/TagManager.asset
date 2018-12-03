@@ -10,6 +10,8 @@ TagManager:
   - Contact3
   - Fire
   - Building1
+  - Top
+  - Blade
   layers:
   - Default
   - TransparentFX

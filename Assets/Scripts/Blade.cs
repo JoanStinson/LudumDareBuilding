@@ -4,8 +4,11 @@ using System.Collections;
 public class Blade : MonoBehaviour
 {
     public GameObject bladeTrailPrefab;
+    public float minCuttingVelocity = .001f;
 
     bool isCutting = false;
+
+    Vector2 previousPosition;
 
     GameObject currentBladeTrail;
     public GameObject particles;
@@ -44,12 +47,26 @@ public class Blade : MonoBehaviour
     }
     void UpdateCut()
     {
-        rb.position = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 newPosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        rb.position = newPosition;
+
+        float velocity = (newPosition - previousPosition).magnitude * Time.deltaTime;
+        if(velocity > minCuttingVelocity)
+        {
+            circleCollider.enabled = true;
+        }
+        else
+        {
+            circleCollider.enabled = false;
+        }
+
+        previousPosition = newPosition;
     }
     void StartCutting()
     {
         isCutting = true;
         currentBladeTrail = Instantiate(bladeTrailPrefab, transform);
+        previousPosition = cam.ScreenToWorldPoint(Input.mousePosition);
         circleCollider.enabled = true;
     }
     void StopCutting()
@@ -60,7 +77,7 @@ public class Blade : MonoBehaviour
         circleCollider.enabled = false;
     }
 
-    void OnTriggerEnter(Collider other)
+  /*  void OnTriggerEnter(Collider other)
     {
 
         // contact1
@@ -113,5 +130,5 @@ public class Blade : MonoBehaviour
             GameManager.score += 100;
         }
 
-    }
+    }*/
 }
