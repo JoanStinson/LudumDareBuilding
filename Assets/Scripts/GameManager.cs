@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
     private float timer = 0;
     public bool isGameOver = false;
     public Text scoreText;
-    public static int score;
+    public static int score, floorsSliced;
 
 	private void Start () {
         NewGame();
@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour {
         if (!instance) instance = this;
         isPause = false;
         isGameOver = false;
+        floorsSliced = 0;
         score = 0;
         scoreText.text = "0";
     }
