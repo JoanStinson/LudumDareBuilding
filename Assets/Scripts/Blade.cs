@@ -50,7 +50,7 @@ public class Blade : MonoBehaviour
         Vector2 newPosition = cam.ScreenToWorldPoint(Input.mousePosition);
         rb.position = newPosition;
 
-        float velocity = (newPosition - previousPosition).magnitude * Time.deltaTime;
+        float velocity = ((newPosition - previousPosition).magnitude) / Time.deltaTime;
         if(velocity > minCuttingVelocity)
         {
             circleCollider.enabled = true;
@@ -66,8 +66,9 @@ public class Blade : MonoBehaviour
     void StartCutting()
     {
         isCutting = true;
+        rb.position = cam.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = rb.position;
         currentBladeTrail = Instantiate(bladeTrailPrefab, transform);
-        previousPosition = cam.ScreenToWorldPoint(Input.mousePosition);
         circleCollider.enabled = true;
     }
     void StopCutting()
